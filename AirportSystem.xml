@@ -10,7 +10,7 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{777.0, 308.0}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{408.1364635678392, 31.846341080402}">
     </property>
     <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
         <property name="startTime" class="ptolemy.data.expr.Parameter" value="">
@@ -21,7 +21,7 @@
         </property>
         <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="true">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[410.0, 140.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{120.0, -60.0}">
         </property>
     </property>
     <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="false">
@@ -29,75 +29,148 @@
     <entity name="PoissonClock" class="ptolemy.actor.lib.PoissonClock">
         <property name="resetOnEachRun" class="ptolemy.actor.parameters.SharedParameter" value="false">
         </property>
-        <property name="meanTime" class="ptolemy.data.expr.Parameter" value="2">
+        <property name="meanTime" class="ptolemy.data.expr.Parameter" value="2.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[400.0, 275.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{110.0, 75.0}">
         </property>
     </entity>
     <entity name="Queue" class="ptolemy.domains.de.lib.Queue">
         <property name="capacity" class="ptolemy.data.expr.Parameter" value="50">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[560.0, 275.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[270.0, 75.0]">
         </property>
     </entity>
     <entity name="Server" class="ptolemy.domains.de.lib.Server">
-        <property name="serviceTime" class="ptolemy.actor.parameters.PortParameter" value="20">
+        <property name="serviceTime" class="ptolemy.actor.parameters.PortParameter" value="5.0">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[710.0, 275.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[395.0, 75.0]">
         </property>
     </entity>
     <entity name="Display" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1435, 590, 365, 259}, maximized=false}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1213, 269, 443, 309}, maximized=false}">
         </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[347, 186]">
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[425, 236]">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[840.0, 275.0]">
-        </property>
-    </entity>
-    <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={803, 615, 476, 326}, maximized=false}">
-        </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[458, 253]">
-        </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[705.0, 365.0]">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[580.0, 140.0]">
         </property>
     </entity>
-    <entity name="Display3" class="ptolemy.actor.lib.gui.Display">
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={227, 602, 557, 365}, maximized=false}">
+    <entity name="BaggageWeight" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 75.0]">
         </property>
-        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[539, 292]">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1038}, maximized=true}">
         </property>
-        <property name="_location" class="ptolemy.kernel.util.Location" value="[560.0, 365.0]">
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 908]">
         </property>
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.25">
+        </property>
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{457.3969849246231, 149.80166457286433}">
+        </property>
+        <property name="DE Director" class="ptolemy.domains.de.kernel.DEDirector">
+            <property name="localClock" class="ptolemy.actor.LocalClock">
+            </property>
+            <property name="stopTime" class="ptolemy.data.expr.Parameter" value="3600">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{85.0, 75.0}">
+            </property>
+        </property>
+        <port name="input" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 200.0}">
+            </property>
+        </port>
+        <entity name="Gaussian" class="ptolemy.actor.lib.Gaussian">
+            <property name="resetOnEachRun" class="ptolemy.actor.parameters.SharedParameter" value="false">
+            </property>
+            <property name="mean" class="ptolemy.actor.parameters.PortParameter" value="15.0">
+            </property>
+            <property name="standardDeviation" class="ptolemy.actor.parameters.PortParameter" value="5.0">
+            </property>
+            <doc>Create a sequence of gaussian random variables</doc>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[200.0, 210.0]">
+            </property>
+        </entity>
+        <entity name="Display" class="ptolemy.actor.lib.gui.Display">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={482, 689, 543, 259}, maximized=false}">
+            </property>
+            <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[525, 186]">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[310.0, 290.0]">
+            </property>
+        </entity>
+        <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
+            <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={560, 256, 522, 259}, maximized=false}">
+            </property>
+            <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[504, 186]">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[740.0, 210.0]">
+            </property>
+        </entity>
+        <entity name="Expression" class="ptolemy.actor.lib.Expression">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(input &gt; 23.0) ? 2 : ((input &lt; 0.0 || input &gt; 50.0) ? 3 : 1)">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+                <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[485.0, 210.0]">
+            </property>
+            <port name="input" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+                </property>
+            </port>
+        </entity>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+            </property>
+            <vertex name="vertex1" value="[265.0, 210.0]">
+            </vertex>
+        </relation>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <link port="input" relation="relation3"/>
+        <link port="Gaussian.output" relation="relation2"/>
+        <link port="Gaussian.trigger" relation="relation3"/>
+        <link port="Display.input" relation="relation2"/>
+        <link port="Display2.input" relation="relation"/>
+        <link port="Expression.output" relation="relation"/>
+        <link port="Expression.input" relation="relation2"/>
     </entity>
-    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
-        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
-        </property>
-        <vertex name="vertex1" value="[625.0, 275.0]">
-        </vertex>
-    </relation>
     <relation name="relation3" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[460.0, 275.0]">
+        <vertex name="vertex1" value="[170.0, 75.0]">
         </vertex>
     </relation>
     <relation name="relation" class="ptolemy.actor.TypedIORelation">
         <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
         </property>
-        <vertex name="vertex1" value="[490.0, 275.0]">
+        <vertex name="vertex1" value="[200.0, 75.0]">
         </vertex>
     </relation>
-    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[500.0, 75.0]">
+        </vertex>
     </relation>
     <link port="PoissonClock.output" relation="relation3"/>
     <link port="Queue.input" relation="relation"/>
     <link port="Queue.output" relation="relation2"/>
     <link port="Queue.trigger" relation="relation"/>
     <link port="Server.input" relation="relation2"/>
-    <link port="Server.output" relation="relation4"/>
-    <link port="Display.input" relation="relation4"/>
-    <link port="Display2.input" relation="relation2"/>
-    <link port="Display3.input" relation="relation3"/>
+    <link port="Server.output" relation="relation5"/>
+    <link port="Display.input" relation="relation5"/>
+    <link port="BaggageWeight.input" relation="relation5"/>
     <link relation1="relation3" relation2="relation"/>
 </entity>
