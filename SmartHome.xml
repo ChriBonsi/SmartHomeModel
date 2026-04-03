@@ -4,7 +4,7 @@
 <entity name="SmartHome" class="ptolemy.actor.TypedCompositeActor">
     <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1">
     </property>
-    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-11, -11, 1946, 1030}, maximized=false}">
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 0, 1946, 1030}, maximized=false}">
     </property>
     <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1712, 884]">
     </property>
@@ -418,8 +418,6 @@
             </port>
             <port name="prevState" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
@@ -1003,13 +1001,13 @@
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[975.0, 440.0]">
         </property>
-        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-11, -11, 1942, 1030}, maximized=true}">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 0, 1946, 1030}, maximized=false}">
         </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 884]">
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1712, 884]">
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{720.5329773869347, 617.7821136934672}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{722.5329773869347, 617.7821136934672}">
         </property>
         <port name="time" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
             <property name="input"/>
@@ -1282,7 +1280,7 @@
 <xLabel></xLabel>
 <yLabel></yLabel>
 <xRange min="0.0" max="24.0"/>
-<yRange min="13.248834717629512" max="25.31878501642025"/>
+<yRange min="12.364256957019778" max="25.44209930317551"/>
 </plot>?>
             </configure>
         </entity>
@@ -1319,14 +1317,12 @@
             </property>
             <port name="dehumidifierState" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
         </entity>
         <entity name="HumidityPlotter" class="ptolemy.actor.lib.gui.TimedPlotter">
-            <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="dehumidifierState, activationThreshold,&#10;deactivationThreshold, humidity">
+            <property name="legend" class="ptolemy.kernel.util.StringAttribute" value="dehumidifierState, activationThreshold, deactivationThreshold, humidity">
             </property>
             <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-11, -11, 1942, 1030}, maximized=true}">
             </property>
@@ -1338,11 +1334,9 @@
 <?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
 "http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
 <plot>
-<title>Humidity Monitoring & Dehumidification Control</title>
-<xLabel></xLabel>
-<yLabel></yLabel>
+<title>HumidityPlotter</title>
 <xRange min="0.0" max="24.0"/>
-<yRange min="40.555596626991374" max="100.0"/>
+<yRange min="40.047509653497436" max="100.0"/>
 </plot>?>
             </configure>
         </entity>
@@ -1628,22 +1622,16 @@
             </property>
             <port name="intTemp" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
             <port name="targetTemp" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
             <port name="prevState" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
@@ -2149,15 +2137,11 @@
             </port>
             <port name="intTemp" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
             <port name="prevHumidity" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
-                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
