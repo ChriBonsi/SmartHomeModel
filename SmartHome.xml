@@ -126,7 +126,7 @@
             </property>
             <property name="insideChannel" class="ptolemy.data.expr.StringParameter" value="">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[725.0, 140.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[750.0, 140.0]">
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
@@ -162,7 +162,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[312.6666717529297, 140.0000228881836]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[296.5322265625, 139.6484375]">
             </property>
             <port name="timeOfDay" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -171,7 +171,7 @@
             </port>
         </entity>
         <entity name="RecordAssembler" class="ptolemy.actor.lib.RecordAssembler">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[610.0, 120.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[635.0, 120.0]">
             </property>
             <port name="motion" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -188,11 +188,11 @@
         <link port="motion" relation="relation3"/>
         <link port="time" relation="relation"/>
         <link port="ExtractTime.input" relation="relation"/>
-        <link port="ExtractTime.timeOfDay" relation="relation2"/>
-        <link port="ComputePresence.output" relation="relation4"/>
-        <link port="ComputePresence.timeOfDay" relation="relation2"/>
+        <link port="ExtractTime.timeOfDay" relation="relation4"/>
+        <link port="ComputePresence.output" relation="relation2"/>
+        <link port="ComputePresence.timeOfDay" relation="relation4"/>
         <link port="RecordAssembler.output" relation="relation3"/>
-        <link port="RecordAssembler.motion" relation="relation4"/>
+        <link port="RecordAssembler.motion" relation="relation2"/>
     </entity>
     <entity name="CentralController" class="ptolemy.domains.wireless.kernel.WirelessComposite">
         <property name="DEDirector" class="ptolemy.domains.de.kernel.DEDirector">
@@ -565,7 +565,7 @@
             </port>
         </entity>
         <entity name="ComputeBaseTemp" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="19.0 + 5.0 * sin(3.14159 * (timeOfDay-6.0) / 12.0)">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="20.0 + 5.0 * sin(3.14159 * (timeOfDay-6.0) / 12.0)">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -681,11 +681,11 @@
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1038}, maximized=true}">
         </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 884]">
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1712, 884]">
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{611.7967179648242, 420.13026067839195}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{613.7967179648242, 420.13026067839195}">
         </property>
         <port name="intTemp" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
             <property name="output"/>
@@ -809,7 +809,7 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[805.0, 390.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{805.0, 390.0}">
             </property>
             <port name="deltaHeating" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
@@ -2030,7 +2030,7 @@
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000007">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{839.8993566176472, 573.3465073529412}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{839.899356617647, 573.3465073529412}">
         </property>
         <port name="time" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
             <property name="input"/>
@@ -2106,7 +2106,7 @@
             </port>
         </entity>
         <entity name="ComputeBaseHumidity" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(0.95 * prevHumidity) + 0.05 * (65.0 -&#10;  35.0 * sin(3.14159 * (timeOfDay - 3.0) / 12.0) + &#10;  (extTemp &lt; 16.0 ? 14.0 : 0.0) + &#10;  (extTemp &gt; 24.0 ? -12.0 : 0.0) + &#10;  (intTemp &gt; 23.0 ? -8.0 : (intTemp &lt; 19.0 ? 8.0 : 0.0)))">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="(0.95 * prevHumidity) + 0.05 * (65.0 -&#10;  35.0 * sin(3.14159 * (timeOfDay - 3.0) / 12.0) + &#10;  (extTemp &lt; 16.0 ? 12.0 : 0.0) + &#10;  (extTemp &gt; 24.0 ? -10.0 : 0.0) + &#10;  (intTemp &gt; 23.0 ? -8.0 : (intTemp &lt; 17.0 ? 6.0 : 0.0)))">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
@@ -2211,7 +2211,7 @@
             </port>
         </entity>
         <entity name="ComputeDeltaDehumidifier" class="ptolemy.actor.lib.Expression">
-            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="dehumidifierState == &quot;ON&quot; ? -1.5 : 0.0">
+            <property name="expression" class="ptolemy.kernel.util.StringAttribute" value="dehumidifierState == &quot;ON&quot; ? -2.0 : 0.0">
             </property>
             <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
                 <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="expression">
