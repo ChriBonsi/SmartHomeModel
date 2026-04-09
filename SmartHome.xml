@@ -10,7 +10,7 @@
     </property>
     <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.2500000000000002">
     </property>
-    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{437.9447236180905, 457.6877355527638}">
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{437.94472361809045, 457.6877355527638}">
     </property>
     <property name="WirelessDirector" class="ptolemy.domains.wireless.kernel.WirelessDirector">
         <property name="stopTime" class="ptolemy.data.expr.Parameter" value="48">
@@ -203,11 +203,11 @@
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1038}, maximized=true}">
         </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 884]">
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 908]">
         </property>
-        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0">
+        <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.25">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{473.806218592965, 115.7938913316583}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{473.806218592965, 127.79389133165827}">
         </property>
         <port name="time" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
             <property name="input"/>
@@ -250,7 +250,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[-258.25, 282.5]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[-55.0, 285.0]">
             </property>
         </port>
         <entity name="ExtractMotion" class="ptolemy.actor.lib.RecordDisassembler">
@@ -409,21 +409,23 @@
                 <property name="displayHeight" class="ptolemy.data.expr.Parameter" value="10">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[466.75, 292.5]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[470.0, 275.0]">
             </property>
-            <port name="humidity" class="ptolemy.actor.TypedIOPort">
-                <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
-                </property>
-            </port>
             <port name="prevState" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
+            <port name="humidity" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+                </property>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
         </entity>
         <entity name="ExtractHumidity" class="ptolemy.actor.lib.RecordDisassembler">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[-188.25, 262.5]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[10.0, 265.0]">
             </property>
             <port name="humidity" class="ptolemy.actor.TypedIOPort">
                 <property name="output"/>
@@ -434,7 +436,7 @@
         <entity name="Register" class="ptolemy.domains.de.lib.Register">
             <property name="initialValue" class="ptolemy.data.expr.Parameter" value="false">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[131.75, 417.5]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[150.0, 240.0]">
             </property>
         </entity>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
@@ -474,13 +476,13 @@
         <relation name="relation14" class="ptolemy.actor.TypedIORelation">
             <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
             </property>
-            <vertex name="vertex1" value="[16.75, 282.5]">
+            <vertex name="vertex1" value="[105.0, 285.0]">
             </vertex>
         </relation>
         <relation name="relation13" class="ptolemy.actor.TypedIORelation">
             <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
             </property>
-            <vertex name="vertex1" value="[665.0, 360.0]">
+            <vertex name="vertex1" value="[655.0, 185.0]">
             </vertex>
         </relation>
         <link port="time" relation="relation3"/>
@@ -510,8 +512,8 @@
         <link port="RecordAssembler.alarmOn" relation="relation4"/>
         <link port="RecordAssembler.dehumidifierOn" relation="relation13"/>
         <link port="ComputeDehumidifier.output" relation="relation13"/>
-        <link port="ComputeDehumidifier.humidity" relation="relation14"/>
         <link port="ComputeDehumidifier.prevState" relation="relation2"/>
+        <link port="ComputeDehumidifier.humidity" relation="relation14"/>
         <link port="ExtractHumidity.input" relation="relation10"/>
         <link port="ExtractHumidity.humidity" relation="relation14"/>
         <link port="Register.input" relation="relation13"/>
@@ -1494,11 +1496,11 @@
         </property>
         <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1038}, maximized=true}">
         </property>
-        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 884]">
+        <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 908]">
         </property>
         <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.2500000000000002">
         </property>
-        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{623.2236180904526, 315.3153735529837}">
+        <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{623.2236180904526, 324.91537355298374}">
         </property>
         <port name="intTemp" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
             <property name="input"/>
@@ -1589,7 +1591,7 @@
                 <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
                 </property>
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[860.0, 425.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[850.0, 395.0]">
             </property>
         </entity>
         <entity name="Merge" class="ptolemy.domains.de.lib.Merge">
@@ -1597,7 +1599,7 @@
             </property>
         </entity>
         <entity name="SingleEvent" class="ptolemy.actor.lib.SingleEvent">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[740.0, 425.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[705.0, 395.0]">
             </property>
         </entity>
         <entity name="HeatingDecisionUnit" class="ptolemy.actor.lib.Expression">
@@ -1613,18 +1615,22 @@
             </property>
             <property name="_location" class="ptolemy.kernel.util.Location" value="[715.0, 250.0]">
             </property>
+            <port name="prevState" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
             <port name="intTemp" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
+                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
+                </property>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
             <port name="targetTemp" class="ptolemy.actor.TypedIOPort">
                 <property name="input"/>
-                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                <property name="defaultValue" class="ptolemy.data.expr.Parameter">
                 </property>
-            </port>
-            <port name="prevState" class="ptolemy.actor.TypedIOPort">
-                <property name="input"/>
                 <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
                 </property>
             </port>
@@ -1632,7 +1638,7 @@
         <entity name="Register" class="ptolemy.domains.de.lib.Register">
             <property name="initialValue" class="ptolemy.data.expr.Parameter" value="&quot;OFF&quot;">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[505.0, 460.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[495.0, 185.0]">
             </property>
         </entity>
         <relation name="relation3" class="ptolemy.actor.TypedIORelation">
@@ -1647,8 +1653,6 @@
         </relation>
         <relation name="relation5" class="ptolemy.actor.TypedIORelation">
         </relation>
-        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
-        </relation>
         <relation name="relation7" class="ptolemy.actor.TypedIORelation">
         </relation>
         <relation name="relation11" class="ptolemy.actor.TypedIORelation">
@@ -1660,7 +1664,7 @@
         <relation name="relation8" class="ptolemy.actor.TypedIORelation">
             <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
             </property>
-            <vertex name="vertex1" value="[880.0, 365.0]">
+            <vertex name="vertex1" value="[880.0, 140.0]">
             </vertex>
         </relation>
         <relation name="relation9" class="ptolemy.actor.TypedIORelation">
@@ -1671,6 +1675,8 @@
             <vertex name="vertex1" value="[305.0, 240.0]">
             </vertex>
         </relation>
+        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        </relation>
         <link port="intTemp" relation="relation3"/>
         <link port="commands" relation="relation4"/>
         <link port="stateHeating" relation="relation5"/>
@@ -1680,7 +1686,7 @@
         <link port="ExtractIntTemp.intTemp" relation="relation13"/>
         <link port="ExtractState.input" relation="relation4"/>
         <link port="ExtractState.state" relation="relation"/>
-        <link port="DecideTargetTemp.output" relation="relation6"/>
+        <link port="DecideTargetTemp.output" relation="relation2"/>
         <link port="DecideTargetTemp.state" relation="relation"/>
         <link port="Const.output" relation="relation9"/>
         <link port="Const.trigger" relation="relation10"/>
@@ -1689,9 +1695,9 @@
         <link port="Merge.output" relation="relation12"/>
         <link port="SingleEvent.output" relation="relation10"/>
         <link port="HeatingDecisionUnit.output" relation="relation11"/>
-        <link port="HeatingDecisionUnit.intTemp" relation="relation13"/>
-        <link port="HeatingDecisionUnit.targetTemp" relation="relation6"/>
         <link port="HeatingDecisionUnit.prevState" relation="relation7"/>
+        <link port="HeatingDecisionUnit.intTemp" relation="relation13"/>
+        <link port="HeatingDecisionUnit.targetTemp" relation="relation2"/>
         <link port="Register.input" relation="relation8"/>
         <link port="Register.output" relation="relation7"/>
         <link port="Register.trigger" relation="relation13"/>
@@ -2019,7 +2025,7 @@
     </entity>
     <entity name="HumiditySensor" class="ptolemy.domains.wireless.kernel.WirelessComposite">
         <property name="DEDirector" class="ptolemy.domains.de.kernel.DEDirector">
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[115.0, 210.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[140.0, 290.0]">
             </property>
         </property>
         <property name="_location" class="ptolemy.kernel.util.Location" value="[355.0, 610.0]">
@@ -2040,7 +2046,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[46.671875, 415.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[35.0, 415.0]">
             </property>
         </port>
         <port name="extTemp" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
@@ -2051,7 +2057,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[42.671875, 495.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[35.0, 495.0]">
             </property>
         </port>
         <port name="intTemp" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
@@ -2073,7 +2079,7 @@
             </property>
             <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
             </property>
-            <property name="_location" class="ptolemy.kernel.util.Location" value="[30.0, 825.0]">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[35.0, 825.0]">
             </property>
         </port>
         <port name="humidity" class="ptolemy.domains.wireless.kernel.WirelessIOPort">
